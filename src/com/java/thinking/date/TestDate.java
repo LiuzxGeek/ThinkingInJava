@@ -17,8 +17,15 @@ public class TestDate {
 		return "";
 	}
 
+	public static long getCurrentTimeStamp() {
+		long timestamp = (new Date()).getTime();
+		timestamp = timestamp / 1000;
+		return timestamp;
+	}
+
 	public static void main(String[] args) {
 		System.out.println(getStamp2Date("1493198873792"));
 		System.out.println(getStamp2Date("1493198873953"));
+		System.out.println(getCurrentTimeStamp());
 	}
 }
