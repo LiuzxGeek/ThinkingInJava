@@ -1,5 +1,7 @@
 package com.java.thinking.constant;
 
+import java.io.File;
+
 public class TestString {
 	public static void main(String[] args) {
 		System.out.println("".trim());
@@ -17,5 +19,11 @@ public class TestString {
 		System.out.println(articleId);
 
 		System.out.println("".equals(null));
+		File file = new File("/lint");
+		System.out.println(file == null);
+		url = "https://xihu-beta.unimedia.com/app/video/detail/5a6193ea8e1c3a78439beed7?access_token?=54394f8a1c9ed917451d8e08a1e9b70351cd67ab72c5a5d21656d0da37dad865&member_id=59daecf58e1c3a4a13dc935d&t=1520498747631";
+		String head = url.substring(0, url.indexOf("?"));
+		String headArr[] = head.split("/");
+		System.out.println(headArr[headArr.length - 1]);
 	}
 }

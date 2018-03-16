@@ -1,6 +1,7 @@
 package com.java.thinking.collection;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -25,5 +26,11 @@ public class TestQueue {
 		workQueue.offer("1");
 		workQueue.offer("2");
 		drainQueue();
+		LinkedList<String> linkedList=new LinkedList<>();
+		linkedList.offer("a");
+		linkedList.add("b");
+		System.out.println(linkedList);
+		System.out.println(linkedList.poll());
+		System.out.println(linkedList);
 	}
 }
