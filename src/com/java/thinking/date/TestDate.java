@@ -20,5 +20,7 @@ public class TestDate {
 	public static void main(String[] args) {
 		System.out.println(getStamp2Date("1493198873792"));
 		System.out.println(getStamp2Date("1493198873953"));
+		
+		System.out.println(getStamp2Date("1502534688000"));
 	}
 }
