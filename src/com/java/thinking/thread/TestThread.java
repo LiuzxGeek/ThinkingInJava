@@ -1,27 +1,34 @@
 package com.java.thinking.thread;
 
 public class TestThread {
-	static String temp = null;
+	static volatile int count = 10;
 
 	public static void main(String[] args) {
-		new Thread(new Runnable() {
+		final Thread thread1 = new Thread(new Runnable() {
 
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				int count = 1000;
 				while (count > 0) {
 					System.out.println(count--);
 				}
 			}
-		}).start();
-		new Thread(new Runnable() {
+		});
+		thread1.start();
+		final Thread thread2 = new Thread(new Runnable() {
 
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				System.out.println(temp.equals(null));
+				while (true) {
+					if (count == 1) {
+						thread1.start();
+						System.out.println("Game Over");
+						break;
+					}
+				}
 			}
-		}).start();
+		});
+		thread2.start();
 	}
 }
