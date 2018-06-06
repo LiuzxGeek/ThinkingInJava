@@ -6,7 +6,7 @@ package com.java.thinking.radix;
 */
 public class TestSixteen {
 	public static void main(String[] args) {
-		System.out.println(Integer.toHexString(255 * 15 / 100));
+		System.out.println(Integer.toHexString(255 * 10 / 100));
 		System.out.println(Integer.toHexString(255 * 20 / 100));
 	}
 }

@@ -25,5 +25,11 @@ public class TestString {
 		String head = url.substring(0, url.indexOf("?"));
 		String headArr[] = head.split("/");
 		System.out.println(headArr[headArr.length - 1]);
+		testStartWith();
+	}
+
+	public static void testStartWith() {
+		String str = "{\"type\":6,\"data\":{\"target_id\":\"\",\"object\":{\"iconUrl\":\"http:\\/\\/test.ihuajian.com\\/uploads\\/images\\/201801\\/c9a4b6b565c.png\",\"name\":\"香吻\",\"id\":1005,\"inValue\":190,\"remark\":\"亲我一下\",\"extendType\":1,\"currentGiftCount\":1,\"type\":3,\"comboList\":[],\"iconUrlReserve\":\"http:\\/\\/test.ihuajian.com\\/uploads\\/images\\/201801\\/bb4bce959e1.png\"},\"PropId\":1005,\"userName\":\"\",\"userId\":\"\",\"PropAmount\":1,\"avatar\":\"\",\"sex\":1}}";
+		System.out.println(str.startsWith("{\"type\":6"));
 	}
 }
