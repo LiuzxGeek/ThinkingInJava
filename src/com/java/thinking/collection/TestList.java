@@ -2,8 +2,12 @@ package com.java.thinking.collection;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TestList {
+	static Student student;
+
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("1");
@@ -17,9 +21,23 @@ public class TestList {
 		handleList(list);
 
 		List<Student> list3 = new ArrayList<>();
-		list3.add(new Student("fred", 29));
+		student = new Student("fred", 29);
+		list3.add(student);
 		list3.get(0).age = 20;
 		System.out.println(list3.get(0).toString());
+		Timer timer = new Timer();
+		final Student exp=list3.get(0);
+		list3.remove(0);
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.println(exp.toString());
+				System.out.println(student.toString());
+			}
+		}, 1000);
+		student = null;
 	}
 
 	public static void handleList(List<String> list) {
