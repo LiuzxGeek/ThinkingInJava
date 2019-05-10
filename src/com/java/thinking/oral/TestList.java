@@ -13,32 +13,34 @@ public class TestList {
 		// if ("2".equals(temp))
 		// list.remove(temp);//删除方法修改了循环方法里的expectModeCount
 		// }
-//		Iterator<String> iterator = list.iterator();
-//		while (iterator.hasNext()) {
-//			if ("2".equals(iterator.next()))
-//				iterator.remove();
-//		}
-//		for (String temp : list) {
-//			System.out.println(temp);
-//		}
-//		LongAdder adder = new LongAdder();
-//		adder.add(5);
-//		adder.decrement();
-//		System.out.println(adder.floatValue());
-//		CountDownLatch countDownLatch = new CountDownLatch(2);
-//		try {
-//			countDownLatch.await();
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		} finally {
-//			// TODO: handle finally clause
-//			countDownLatch.countDown();
-//		}
+		// Iterator<String> iterator = list.iterator();
+		// while (iterator.hasNext()) {
+		// if ("2".equals(iterator.next()))
+		// iterator.remove();
+		// }
+		// for (String temp : list) {
+		// System.out.println(temp);
+		// }
+		// LongAdder adder = new LongAdder();
+		// adder.add(5);
+		// adder.decrement();
+		// System.out.println(adder.floatValue());
+		// CountDownLatch countDownLatch = new CountDownLatch(2);
+		// try {
+		// countDownLatch.await();
+		// } catch (Exception e) {
+		// // TODO: handle exception
+		// } finally {
+		// // TODO: handle finally clause
+		// countDownLatch.countDown();
+		// }
 		List<String> bList = new ArrayList<>();
 		bList.add("3");
 		bList.add("2");
 		list.removeAll(bList);
 		for (String str : list)
 			System.out.println(str);
+		bList.addAll(null);
+		System.out.println(Math.round(1.5));
 	}
 }
