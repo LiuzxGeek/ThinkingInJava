@@ -10,11 +10,11 @@ public class TestRandom {
 	static Integer integer;
 
 	private static void test1() {
-		Random r1 = new Random(100);
-		Random r2 = new Random(100);
+		Random r1 = new Random(3);
+		Random r2 = new Random(2);
 
 		for (int i = 0; i < 100; i++) {
-			System.out.println(r1.nextInt(100) + ", " + r2.nextInt());
+			System.out.println(r1.nextInt(4) + ", " + r2.nextInt());
 		}
 	}
 
@@ -31,8 +31,8 @@ public class TestRandom {
 
 	public static void main(String[] args) {
 		testCase();
-		int a = integer;
-		System.out.println(integer);
-		System.out.println(a);
+//		int a = integer;
+//		System.out.println(integer);
+//		System.out.println(a);
 	}
 }

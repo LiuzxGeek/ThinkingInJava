@@ -1,14 +1,57 @@
 package com.java.thinking.constant;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class TestString {
+	public static final String BREAK_CHAR = "breakChar";
+
 	public static void main(String[] args) {
 
 		// testStartWith();
 		// testHead();
 		// testOutput();
-		testSplit();
+		// testSplit();
+		testBreak();
+		System.out.println("  2019-08-17".replaceAll("&nbsp;", ""));
+	}
+
+	private static void testBreak() {
+		String str = "http://imglf6.nosdn0.126.net/img/ampKNXpMZHNOS0FtRk5WWk14NmgrNUFpdW5oWk51NWc1b3ZFRTl2UElZWm8rNzFjTVFRVzVnPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkg5p6d5qWgIExpbmRzYXluYW4gLyBpc3R5bGUtbGluZHNheS1uYW4ubG9mdC4uLg==&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0breakCharhttp://imglf5.nosdn0.126.net/img/ampKNXpMZHNOS0FtRk5WWk14NmgrNTBqOWV6ZWx1d2ZhQTdHWjR4RVpObW9OYVVNSm1NQVZRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkg5p6d5qWgIExpbmRzYXluYW4gLyBpc3R5bGUtbGluZHNheS1uYW4ubG9mdC4uLg==&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0breakCharhttp://imglf3.nosdn0.126.net/img/ampKNXpMZHNOS0FtRk5WWk14NmgrNStPa3F1WUM3T2p2Ukd5Y3lsZnVDUTlsbkh1UWFBR3p3PT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkg5p6d5qWgIExpbmRzYXluYW4gLyBpc3R5bGUtbGluZHNheS1uYW4ubG9mdC4uLg==&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0breakCharhttp://imglf3.nosdn0.126.net/img/ampKNXpMZHNOS0FtRk5WWk14NmgrOEpVVVF0bFBYd05oVlc4YzZGTEg5WjBBdnZYTzZIb1dRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkg5p6d5qWgIExpbmRzYXluYW4gLyBpc3R5bGUtbGluZHNheS1uYW4ubG9mdC4uLg==&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0";
+		String[] source = Pattern.compile("breakChar").split(str, 0);
+		List<String> list = Arrays.asList(source);
+		for (String c : source) {
+			System.out.println(c);
+		}
+	}
+
+	private static void testLabel() {
+		String str = "#米娜宁波# 【台风\"米娜\"将擦过或登陆浙江!宁波沿海进入III级防台!部分班线已停】据市气象台通报：今年第18号台风“米娜”9月29日17时加强为台风级，中心位于距宁波东南偏南1150公里洋面上，预计将以20公里左右时速向西北方向移动，30日夜里擦过或登陆台湾东北部，而后转向偏北方向移动，向浙江中北部沿海靠近，1日擦过或登陆浙江沿海北上，将严重影响我市。市气象台29日11时已发布台风警报[话筒]#宁波台风# （NBTV新闻中心）";
+		String[] attr = str.split("#");
+		String label = "";
+		for (int i = 0; i < attr.length; i++) {
+			System.out.println(attr[i]);
+			if (i % 2 == 1) {
+				label += "#" + attr[i] + "#";
+			}
+		}
+		System.out.println(label);
+	}
+
+	private static void testIns() {
+		System.out.println("/storage/emulated/0/DCIM/FastPig/Image/IMG_99a4aec047ebe27fc7123e8c06a562af.jpg"
+				.contains("/storage/emulated/0/DCIM/FastPig"));
+		System.out.println("今北勝久 在 Instagram 上发布：“浜寺公園でBBQ🍖\r\n#浜寺公園 #bbq🍖 \r\n#子供達は水鉄砲でびちょびちょ”".split("：“")[1]);
+		String[] attr = "https://scontent-hkg3-2.cdninstagram.com/vp/e21cf1e8b8af9d4dca7b1908d0adb7a7/5E07D5E9/t51.2885-15/sh0.08/e35/s640x640/70976464_2936175179742561_2929394412238638745_n.jpg?_nc_ht=scontent-hkg3-2.cdninstagram.com&amp;_nc_cat=109 640w,https://scontent-hkg3-2.cdninstagram.com/vp/9e9abc08eca6e6824de3152c3b3c1c9c/5E0C722D/t51.2885-15/sh0.08/e35/s750x750/70976464_2936175179742561_2929394412238638745_n.jpg?_nc_ht=scontent-hkg3-2.cdninstagram.com&amp;_nc_cat=109 750w,https://scontent-hkg3-2.cdninstagram.com/vp/c451aeba8e280ea8faa45b30c97f1637/5DFDC02D/t51.2885-15/e35/s1080x1080/70976464_2936175179742561_2929394412238638745_n.jpg?_nc_ht=scontent-hkg3-2.cdninstagram.com&amp;_nc_cat=109 1080w"
+				.split(",");
+		for (String str : attr) {
+			System.out.println(str);
+		}
+		String result = "  ,  ";
+		System.out.println(result.length());
+		System.out.println(result.trim().length());
 	}
 
 	private static void testSplit() {

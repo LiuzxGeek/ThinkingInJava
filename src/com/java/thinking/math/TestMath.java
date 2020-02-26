@@ -28,10 +28,12 @@ public class TestMath {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(getDataFormat(1560));
-		System.out.println(getDataFormat(10400));
-		System.out.println(getDataFormat(156000000));
-		// 每三位以逗号进行分隔。
-		System.out.println(new DecimalFormat(",###").format(1015521743));// 299,792,458
+//		System.out.println(getDataFormat(1560));
+//		System.out.println(getDataFormat(10400));
+//		System.out.println(getDataFormat(156000000));
+//		// 每三位以逗号进行分隔。
+//		System.out.println(new DecimalFormat(",###").format(1015521743));// 299,792,458
+//		System.out.println(0x10000000&0x10000000);
+		System.out.println(0x00000001&0x10000000&0x10000000);
 	}
 }

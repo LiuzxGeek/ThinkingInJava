@@ -1,6 +1,7 @@
 package com.java.thinking.collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -11,22 +12,28 @@ public class TestList {
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("1");
-		list.add("2");
+		List<String> unList = Collections.unmodifiableList(list);
+//		unList.add(1, "2");
 		System.out.println(list.toString());
-		handleList(list);
+		// handleList(list);
+		//
+		// List<String> list2 = new ArrayList<>();
+		// list2.add("a");
+		// list = list2;
+		// handleList(list);
+		System.out.print(true || true && true);// 提示去掉最后两个
 
-		List<String> list2 = new ArrayList<>();
-		list2.add("a");
-		list = list2;
-		handleList(list);
+		System.out.print(false && true || false);// 提示去掉中间一个
+	}
 
+	private static void test3() {
 		List<Student> list3 = new ArrayList<>();
 		student = new Student("fred", 29);
 		list3.add(student);
 		list3.get(0).age = 20;
 		System.out.println(list3.get(0).toString());
 		Timer timer = new Timer();
-		final Student exp=list3.get(0);
+		final Student exp = list3.get(0);
 		list3.remove(0);
 		timer.schedule(new TimerTask() {
 

@@ -21,5 +21,21 @@ public class TestMap {
 		list.add(2l);
 		System.out.println(map2.get("2018-11-23").size());
 		System.out.println(Double.valueOf("0"));
+		System.out.println(tableSizeFor(1));
+		Map<String, Integer> map3 = new HashMap<>();
+		System.out.println(map3.size());
+		Map<String, Integer> map4 = new HashMap<>(2);
+		System.out.println(map4.size());
+	}
+
+	static final int tableSizeFor(int cap) {
+		int MAXIMUM_CAPACITY = 1 << 30;
+		int n = cap - 1;
+		n |= n >>> 1;
+		n |= n >>> 2;
+		n |= n >>> 4;
+		n |= n >>> 8;
+		n |= n >>> 16;
+		return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 	}
 }

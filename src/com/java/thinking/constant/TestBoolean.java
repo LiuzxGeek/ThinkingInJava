@@ -40,9 +40,23 @@ public class TestBoolean {
 		System.out.print(true && false || true);
 		printBlank();
 		System.out.print(true && true || true);// 提示去掉最后一个
+		testEqual();
 	}
 
 	static void printBlank() {
 		System.out.print("\t");
+	}
+
+	static int hostRoomId;
+	static int guestRoomId;
+	static String roomId;
+
+	static void testEqual() {
+		String hostId = String.valueOf(hostRoomId);
+		String guestId = String.valueOf(guestRoomId);
+		System.out.println("hostId:" + hostId);
+		System.out.println("guestId:" + guestId);
+		boolean isDirectScene = (hostId.equals(roomId) || guestId.equals(roomId));
+		System.out.println("isDirectScene:" + isDirectScene);
 	}
 }
