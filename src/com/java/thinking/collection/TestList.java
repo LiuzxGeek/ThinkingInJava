@@ -1,7 +1,7 @@
 package com.java.thinking.collection;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -10,20 +10,26 @@ public class TestList {
 	static Student student;
 
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<>();
-		list.add("1");
-		List<String> unList = Collections.unmodifiableList(list);
-//		unList.add(1, "2");
-		System.out.println(list.toString());
-		// handleList(list);
-		//
-		// List<String> list2 = new ArrayList<>();
-		// list2.add("a");
-		// list = list2;
-		// handleList(list);
-		System.out.print(true || true && true);// 提示去掉最后两个
+		test4();
+	}
 
-		System.out.print(false && true || false);// 提示去掉中间一个
+	private static void test4() {
+		List<Student> list = new ArrayList<>(4);
+//		list.add(null);
+//		list.add(null);
+//		list.add(null);
+//		list.add(null);
+		list.add(1, new Student("1", 1));
+		list.add(2, new Student("2", 2));
+		list.add(0, new Student("0", 0));
+		list.add(3, new Student("3", 3));
+		for (Iterator<Student> iterator = list.iterator(); iterator.hasNext();) {
+			Student string = iterator.next();
+			if (string!=null) {
+				System.out.println(string.toString());				
+			}
+		}
+		System.out.println(list.size());
 	}
 
 	private static void test3() {

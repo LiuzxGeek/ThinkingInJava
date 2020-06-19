@@ -16,6 +16,22 @@ public class TestString {
 		// testSplit();
 		testBreak();
 		System.out.println("  2019-08-17".replaceAll("&nbsp;", ""));
+		String url = "http://maxine-ve.lofter.com/post/18f158_1c8a5a034";
+		System.out.println(url.substring(0, url.indexOf(".com")) + ".com");
+		String userId = url.replace("http://", "").replace("https://", "");
+		userId = userId.substring(0, userId.indexOf(".lofter"));
+		System.out.println(userId);
+		String result = "​​​http://t.cn/A6wFSlbh ​​​http://weibointl.api.weibo.com/share/149228028.html?weibo_id=4497803092825963";
+		System.out.println(result.substring(result.lastIndexOf("http")));
+		System.out.println(getSubString("小乖乖不乖就是狗"));
+		
+	}
+
+	private static String getSubString(String anchorName) {
+		if (anchorName.length() > 7) {
+			anchorName = anchorName.substring(0, 7) + "...";
+		}
+		return anchorName;
 	}
 
 	private static void testBreak() {

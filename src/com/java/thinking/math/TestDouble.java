@@ -83,7 +83,7 @@ public class TestDouble {
 	}
 
 	public static String getWanFormat(double number) {
-        DecimalFormat format = new DecimalFormat("#.00");
+		DecimalFormat format = new DecimalFormat("#.00");
 		format.setGroupingSize(0);
 		format.setRoundingMode(RoundingMode.FLOOR);
 		if (number >= 10000) {
@@ -103,12 +103,24 @@ public class TestDouble {
 		}
 	}
 
+	private static String getOrigin(double num) {
+		String price = String.valueOf(num);
+		if (price.endsWith(".0")) {
+			price = price.replace(".0", "");
+		}
+		return price;
+	}
+
 	public static void main(String[] args) {
-		System.out.println(getWanFormat(33985d));
-		System.out.println(getWanFormat(33985.0123d));
-		System.out.println(getWanFormat(339d));
-		System.out.println(getWanFormat(339.134d));
-		System.out.println(getWanFormat(3390d));
-		System.out.println(getWanFormat(3390.134d));
+		// System.out.println(getWanFormat(33985d));
+		// System.out.println(getWanFormat(33985.0123d));
+		// System.out.println(getWanFormat(339d));
+		// System.out.println(getWanFormat(339.134d));
+		// System.out.println(getWanFormat(3390d));
+		// System.out.println(getWanFormat(3390.134d));
+		System.out.println(getOrigin(3390.134d));
+		System.out.println(getOrigin(3390.0000d));
+		System.out.println(getOrigin(3390.0d));
+		System.out.println(getOrigin(3390));
 	}
 }
