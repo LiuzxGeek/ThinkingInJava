@@ -8,14 +8,23 @@ import java.net.URI;
 */
 public class TestUri {
 	public static void main(String[] args) {
-		URI uri = URI.create("https://youtu.be/aCVw6igO7U4");
-		System.out.println(uri.getAuthority());
-		System.out.println(uri.getFragment());
-		System.out.println(uri.getHost());
-		System.out.println(uri.getPath().endsWith("/"));
-		System.out.println(uri.getQuery());
-		System.out.println(uri.getScheme());
-		System.out.println(uri.getUserInfo());
-		System.out.println(uri.toString());
+		String url = "https://h5.m.taobao.com/trip/rx-travel-talent/home/index.html?titleBarHidden=1&amp;_fli_wk=true&amp;id=2206823776305&_projVer=1.3.0";
+		url = url.replace("tbopen", "http");
+		URI uri = URI.create(url);
+		System.out.println("Authority:" + uri.getAuthority());
+		System.out.println("getFragment:" + uri.getFragment());
+		System.out.println("getHost:" + uri.getHost());
+		System.out.println("getPath:" + uri.getPath());
+		System.out.println("getName:" + uri.getPath().split("/")[1]);
+		System.out.println("getQuery:" + uri.getQuery());
+		System.out.println("getScheme:" + uri.getScheme());
+		System.out.println("getUserInfo:" + uri.getUserInfo());
+		System.out.println("toString:" + uri.toString());
+
+		String path = "https://m.facebook.com/WHO/videos/2034333113367871/?refsrc=https://m.facebook.com/154163327962392/posts/3664198043625552/&_rdr";
+		String child = "https://www.facebook.com/154163327962392/posts/3664198043625552/?sfnsn=mo";
+		System.out.println(path);
+		System.out.println(child.substring(child.lastIndexOf("."), child.lastIndexOf("/")));
+		System.out.println(path.contains(child.substring(child.lastIndexOf("."), child.lastIndexOf("/"))));
 	}
 }

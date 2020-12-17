@@ -10,26 +10,44 @@ public class TestList {
 	static Student student;
 
 	public static void main(String[] args) {
-		test4();
+		test5();
+	}
+
+	private static void test5() {
+		List<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		Iterator<Integer> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			int key = iterator.next();
+			if (key % 2 == 0) {
+				list.remove(key);
+			}
+		}
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
 	}
 
 	private static void test4() {
 		List<Student> list = new ArrayList<>(4);
-//		list.add(null);
-//		list.add(null);
-//		list.add(null);
-//		list.add(null);
-		list.add(1, new Student("1", 1));
-		list.add(2, new Student("2", 2));
-		list.add(0, new Student("0", 0));
-		list.add(3, new Student("3", 3));
-		for (Iterator<Student> iterator = list.iterator(); iterator.hasNext();) {
-			Student string = iterator.next();
-			if (string!=null) {
-				System.out.println(string.toString());				
-			}
-		}
-		System.out.println(list.size());
+		// list.add(null);
+		// list.add(null);
+		// list.add(null);
+		// list.add(null);
+		// list.add(1, new Student("1", 1));
+		// list.add(2, new Student("2", 2));
+		// list.add(0, new Student("0", 0));
+		// list.add(3, new Student("3", 3));
+		// for (Iterator<Student> iterator = list.iterator(); iterator.hasNext();) {
+		// Student string = iterator.next();
+		// if (string != null) {
+		// System.out.println(string.toString());
+		// }
+		// }
+		System.out.println(Double.valueOf("2.021234").intValue());
 	}
 
 	private static void test3() {

@@ -5,7 +5,7 @@ import java.util.concurrent.CyclicBarrier;
 /*
 *@author:liuxian
 *@date:2020年6月18日
-* 先全部分配，结束后，再全部执行
+* 先全部分配，结束后；再全部执行
 */
 public class TestCyclicBarrier {
 	public static void main(String[] args) throws InterruptedException {
