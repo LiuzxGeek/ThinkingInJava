@@ -40,6 +40,7 @@ public class MaxData {
 			int curCount = n - i + j;
 			// 此循环的意义在于，在curCount允许的情况下，将最前面小数字遍历并替换掉
 			while (n - i + j > k && j > 0 && nums[i] > res[j - 1]) {
+				// 大于k代表剩余的数量还满足条件，可以将高位的小数替换掉
 				j--;
 			}
 			if (j < k) {
@@ -78,8 +79,13 @@ public class MaxData {
 		int[] nums1 = new int[] { 6, 7 };// { 3, 4, 6, 5 };
 		int[] nums2 = new int[] { 2, 1, 2, 8, 9, 3 };// { 6, 0, 4 };//
 		int[] result = maxNumber(nums1, nums2, 5);
-		for (int i = 0; i < result.length; i++) {
-			System.out.println(result[i]);
-		}
+		// for (int i = 0; i < result.length; i++) {
+		// System.out.println(result[i]);
+		// }
+		String str = "123";
+		int index = str.indexOf("10");
+		System.out.println(index);
+		System.out.println(str.substring(0, index));
+		System.out.println(str.substring(index,str.length()));
 	}
 }

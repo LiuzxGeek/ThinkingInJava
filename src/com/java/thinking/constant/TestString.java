@@ -14,17 +14,22 @@ public class TestString {
 		// testHead();
 		// testOutput();
 		// testSplit();
-		testBreak();
-		System.out.println("  2019-08-17".replaceAll("&nbsp;", ""));
-		String url = "http://maxine-ve.lofter.com/post/18f158_1c8a5a034";
-		System.out.println(url.substring(0, url.indexOf(".com")) + ".com");
-		String userId = url.replace("http://", "").replace("https://", "");
-		userId = userId.substring(0, userId.indexOf(".lofter"));
-		System.out.println(userId);
+//		testBreak();
+//		System.out.println("  2019-08-17".replaceAll("&nbsp;", ""));
+//		String url = "http://maxine-ve.lofter.com/post/18f158_1c8a5a034";
+//		System.out.println(url.substring(0, url.indexOf(".com")) + ".com");
+//		String userId = url.replace("http://", "").replace("https://", "");
+//		userId = userId.substring(0, userId.indexOf(".lofter"));
+//		System.out.println(userId);
 		String result = "​​​http://t.cn/A6wFSlbh ​​​http://weibointl.api.weibo.com/share/149228028.html?weibo_id=4497803092825963";
 		System.out.println(result.substring(result.lastIndexOf("http")));
 		System.out.println(getSubString("小乖乖不乖就是狗"));
-		
+		result = "https://share.huoshan.com/pages/item/index.html?item_id=6924960199136529675&tag=10078&timestamp=1612789269&watermark=2&media_type=4&share_ht_uid=0&did=58516573068&iid=422633686705613&utm_medium=huoshan_android&tt_from=copy_link&app=live_stream&utm_source=copy_link&schema_url=sslocal%3A%2F%2Fitem%3Fid%3D6924960199136529675";
+		result = result.substring(0, result.indexOf("?"));
+		result = result.substring(result.lastIndexOf("."));
+		System.out.println(result);
+		System.out.println(System.currentTimeMillis());
+
 	}
 
 	private static String getSubString(String anchorName) {
