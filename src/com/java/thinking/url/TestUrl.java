@@ -1,5 +1,6 @@
 package com.java.thinking.url;
 
+import java.math.BigInteger;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.util.regex.Matcher;
